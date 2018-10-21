@@ -1,7 +1,7 @@
 
 import uuid from 'uuid/v4';
 import superagent from 'superagent';
-const url =  'http://localhost:3003/api/v1/safety';
+const url =  'https://tier-board.herokuapp.com/api/v1/safety';
 // Actions
 export const SAFETY_ADD = 'safety/ADD';
 export const SAFETY_ASYNC_ADD = 'safety/ASYNC_ADD';
