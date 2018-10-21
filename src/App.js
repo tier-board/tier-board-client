@@ -18,7 +18,7 @@ export default class App extends Component {
               <BrowserRouter>
                   <Fragment>
                     {/* <Route exact path="/" component={Landing}/> */}
-                    <Route exact path="/" component={Dashboard}/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/`} component={Dashboard}/>
                     {/* <Route exact path="/safety" component={Safety}/> */}
                   </Fragment>
               </BrowserRouter>
