@@ -6,7 +6,7 @@ import { injectGlobal } from 'styled-components';
 import { colorsLight } from './palette';
 
 const setGlobalStyles = () => {
-injectGlobal`
+  injectGlobal`
 * {
     box-sizing: border-box;
 }
@@ -25,7 +25,7 @@ html, body {
 nav {
     background: #0653c7;
     height: 5em;
-    background-image: url(assets/blue.jpeg);
+    //background-image: url(assets/blue.jpeg);
 }
 .nav {
     display: inline-block;
