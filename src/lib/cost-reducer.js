@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
     return [...state, ...payload];
   case COST_UPDATE:  
     return state.map(cost => cost.id === payload.id ? payload : cost);
-  case COST_DELETE: 
+  case COST_DELETE:
     return state.filter(cost => cost.id !== payload.id);
   default: return state;
   }
@@ -30,7 +30,6 @@ export default (state = initialState, action) => {
 
 // Action Creators
 export const costAdd = (cost) => {
-  console.log('addReducer', cost);
   cost.id = uuid();
   return dispatch => {
     superagent.post(url, cost)
@@ -41,7 +40,6 @@ export const costAdd = (cost) => {
 };
 
 export const costAsyncAdd = (cost) => {
-  console.log('inside action creator', cost);
   return {
     type: COST_ASYNC_ADD,
     payload: cost,

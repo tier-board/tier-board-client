@@ -9,35 +9,37 @@ export default class CostItem extends Component {
   }
 
   updateView = () => {
+    console.log('cost-item updateView');
     this.setState({view: true});
   }
   returnView = () => {
+    console.log('cost-item returnView');
     this.setState({view: false});
   }
   onRemove = () => {
+    console.log('cost-item onRemove');
       this.props.onRemove(this.props.cost);
-      window.location.reload();//FIXME:this works, but need to find a better way than refreshing the whole page, same below
     }
   
  costUpdate = (cost) => {
   this.props.onComplete(cost);
-  window.location.reload();
+
   }
 
   render() {
       return(
         <Fragment>
          <div onDoubleClick={this.updateView}>
-            <li class="list-wrapper">
-              <div class="row">
-                <div class="column">
-                  <div class="column1">
+            <li className="list-wrapper">
+              <div className="row">
+                <div className="column">
+                  <div className="column1">
                     <h3>STATION</h3>
                     <p>{this.props.cost.station}</p>
                   </div>
                 </div>
-                <div class="column">
-                  <div class="column2">
+                <div className="column">
+                  <div className="column2">
                     <h3>TASK</h3>
                     <p>{this.props.cost.task}</p>
                   </div>

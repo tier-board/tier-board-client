@@ -16,28 +16,27 @@ export default class MoraleItem extends Component {
   }
   onRemove = () => {
       this.props.onRemove(this.props.morale);
-      window.location.reload();//FIXME:this works, but need to find a better way than refreshing the whole page, same below
     }
   
  moraleUpdate = (morale) => {
   this.props.onComplete(morale);
-  window.location.reload();
+
   }
 
   render() {
       return(
         <Fragment>
          <div onDoubleClick={this.updateView}>
-            <li class="list-wrapper">
-              <div class="row">
-                <div class="column">
-                  <div class="column1">
+            <li className="list-wrapper">
+              <div className="row">
+                <div className="column">
+                  <div className="column1">
                     <h3>STATION</h3>
                     <p>{this.props.morale.station}</p>
                   </div>
                 </div>
-                <div class="column">
-                  <div class="column2">
+                <div className="column">
+                  <div className="column2">
                     <h3>TASK</h3>
                     <p>{this.props.morale.task}</p>
                   </div>
