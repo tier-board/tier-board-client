@@ -14,9 +14,7 @@ export default class App extends Component {
             <Provider store={store}>
               <BrowserRouter>
                   <Fragment>
-                    {/* <Route exact path="/" component={Landing}/> */}
                     <Route exact path={`/`} component={Dashboard}/>
-                    {/* <Route exact path="/safety" component={Safety}/> */}
                   </Fragment>
               </BrowserRouter>
             </Provider>
