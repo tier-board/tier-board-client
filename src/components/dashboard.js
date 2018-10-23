@@ -92,7 +92,13 @@ class Dashboard extends Component {
     return (
        
         <Fragment>
-            <h1>Tier Board Data</h1>
+          <h1>Tier Board Data</h1>
+          <nav>
+            <ul>
+              <li class="nav"><a href="/">home</a></li>
+              <li class="nav">about</li>
+            </ul>
+          </nav>
             <h2>{this.state.date}</h2>
             <div class="container">
             <h2 class="container-title">SAFETY</h2>

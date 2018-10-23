@@ -17,8 +17,19 @@ html, body {
     overflow-x: hidden;
     margin 3%;
     padding: 0;
-    background: lightgray;
+    background: #f5f5f5;
     //background-color: #0653c7;
+}
+
+nav {
+    background: #0653c7;
+    height: 5em;
+    background-image: url(assets/blue.jpeg);
+}
+.nav {
+    display: inline-block;
+    margin: 2em 5em 0 1em;
+    color: #f5f5f5;
 }
 
 ul {
@@ -32,12 +43,13 @@ h2, h1 {
     width: 95%
 }
 .container {
-    border: ridge;
+    border: ridge #0653c7;
     border-radius: .5em;
     //width: 95%;  
     text-align: center;
     margin-right: 5%;
-    background: #f5f5f5;
+    margin-bottom: .25%;
+    background: lightgray;
     //background: #0653c7;
 }
 
@@ -70,19 +82,19 @@ h2, h1 {
 }
 
 .column1 {
-    background: lightgray;
+    background: #f5f5f5;
     border-radius: .5em;
     margin-right: 2%;
     margin-bottom: 2%;
 }
 
 .column2 {
-    background: lightgray;
+    background: #f5f5f5;
     border-radius: .5em;
 }
 
 .column3 {
-    background: lightgray;
+    background: #f5f5f5;
     margin-left: 2%;
     border-radius: .5em;
 }
@@ -90,7 +102,7 @@ h2, h1 {
 h3 {
   padding: 0 .5em 0 .5em; 
   text-align: center;
-  background: lightgray;
+  background: #f5f5f5;
 }
 
 p { 
