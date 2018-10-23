@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import {Provider} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
-import createStore from '../src/lib/store';
-import Dashboard from '../src/components/dashboard';
+import createStore from './lib/store.js';
+import Dashboard from './components/dashboard.js';
 
 const store = createStore();
 // import logo from './logo.svg';
