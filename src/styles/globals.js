@@ -2,7 +2,8 @@
 //https://gitconnected.com/courses/learn-react-redux-tutorial-build-a-hacker-news-clone
 
 import { injectGlobal } from 'styled-components';
-import { colorsDark, colorsLight } from './palette';
+// import { colorsDark, colorsLight } from './palette';
+import { colorsLight } from './palette';
 
 const setGlobalStyles = () => {
 injectGlobal`
