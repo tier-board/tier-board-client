@@ -13,24 +13,31 @@ const setGlobalStyles = () => {
 
 html, body {
     font-family: Lato, Helvetica-Neue,Helvetica,Arial,sans-serif;
-    width: 95%;
+    width: 99%;
     nim-height: 100vh;
     overflow-x: hidden;
-    margin 3%;
     padding: 0;
     background: #f5f5f5;
-    //background-color: #0653c7;
+    margin-bottom: 3%;
 }
 
 nav {
+    width: 99%;
     background: #0653c7;
-    height: 5em;
+    height: 4em;
     //background-image: url(assets/blue.jpeg);
 }
+
 .nav {
     display: inline-block;
-    margin: 2em 5em 0 1em;
+    margin: .5em 5em 1em 1em;
     color: #f5f5f5;
+}
+
+nav ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
 }
 
 ul {
@@ -46,9 +53,8 @@ h2, h1 {
 .container {
     border: ridge #0653c7;
     border-radius: .5em;
-    //width: 95%;  
     text-align: center;
-    margin-right: 5%;
+    margin: 0 3% 0 3%;
     margin-bottom: .25%;
     background: lightgray;
     //background: #0653c7;
@@ -116,7 +122,7 @@ p {
 a {
     text-decoration: none;
     &:visited {
-      color: inherit;
+      color: white;
     }
 }
 
@@ -149,5 +155,5 @@ input {
 }
 
 `;
-}
+};
 export default setGlobalStyles;

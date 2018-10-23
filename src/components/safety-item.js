@@ -16,28 +16,26 @@ export default class SafetyItem extends Component {
   }
   onRemove = () => {
       this.props.onRemove(this.props.safety);
-      window.location.reload();//FIXME:this works, but need to find a better way than refreshing the whole page, same below
     }
   
  safetyUpdate = (safety) => {
   this.props.onComplete(safety);
-  window.location.reload();
   }
 
   render() {
       return(
         <Fragment>
          <div onDoubleClick={this.updateView}>
-            <li class="list-wrapper">
-              <div class="row">
-                <div class="column">
-                  <div class="column1">
+            <li className="list-wrapper">
+              <div className="row">
+                <div className="column">
+                  <div className="column1">
                     <h3>INCIDENT</h3>
                     <p>{this.props.safety.incidents}</p>
                   </div>
                 </div>
-                <div class="column">
-                  <div class="column2">
+                <div className="column">
+                  <div className="column2">
                     <h3>RESPONSE</h3>
                     <p>{this.props.safety.response}</p>
                   </div>

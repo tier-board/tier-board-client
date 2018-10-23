@@ -15,35 +15,33 @@ export default class DeliveryItem extends Component {
     this.setState({view: false});
   }
   onRemove = () => {
-      this.props.onRemove(this.props.delivery);
-      window.location.reload();//FIXME:this works, but need to find a better way than refreshing the whole page, same below
+      this.props.onRemove(this.props.delivery);   
     }
   
  deliveryUpdate = (delivery) => {
   this.props.onComplete(delivery);
-  window.location.reload();
   }
 
   render() {
       return(
         <Fragment>
          <div onDoubleClick={this.updateView}>
-            <li class="list-wrapper">
-              <div class="row">
-                <div class="column">
-                  <div class="column1">
+            <li className="list-wrapper">
+              <div className="row">
+                <div className="column">
+                  <div className="column1">
                     <h3>STATION</h3>
                     <p>{this.props.delivery.station}</p>
                   </div>
                 </div>
-                <div class="column">
-                  <div class="column2">
+                <div className="column">
+                  <div className="column2">
                     <h3>ISSUE</h3>
                     <p>{this.props.delivery.issue}</p>
                   </div>
                 </div>
-                <div class="column">
-                  <div class="column3">
+                <div className="column">
+                  <div className="column3">
                     <h3>COUNTERMEASURE</h3>
                     <p>{this.props.delivery.countermeasure}</p>
                   </div>

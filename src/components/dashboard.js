@@ -44,16 +44,16 @@ class Dashboard extends Component {
     this.props.moraleFetch();
     }
 
-    allSafetyFetch = () => {
-          fetch(url)
-            .then(function(res) { 
-              return res.json();
-            })
-            .then((allSafety) => {
-              const safetyStuff = allSafety;
-              this.setState({safetyData: safetyStuff});
-            })
-    }
+    // allSafetyFetch = () => {
+    //       fetch(url)
+    //         .then(function(res) { 
+    //           return res.json();
+    //         })
+    //         .then((allSafety) => {
+    //           const safetyStuff = allSafety;
+    //           this.setState({safetyData: safetyStuff});
+    //         })
+    // }
 
 // updateView = () => {
 //   this.setState({view: true});
@@ -92,16 +92,16 @@ class Dashboard extends Component {
     return (
        
         <Fragment>
-          <h1>Tier Board Data</h1>
           <nav>
             <ul>
-              <li class="nav"><a href="/">home</a></li>
-              <li class="nav">about</li>
+              <li className="nav"><a href="/">home</a></li>
+              <li className="nav">about</li>
             </ul>
           </nav>
+          <h1>Tier Board Data</h1>
             <h2>{this.state.date}</h2>
-            <div class="container">
-            <h2 class="container-title">SAFETY</h2>
+            <div className="container">
+            <h2 className="container-title">SAFETY</h2>
             <button onClick={this.updateView} name="safety">Add Safety Incident</button>
             {this.state.safetyView && <SafetyForm onComplete={this.props.safetyAdd} viewChange={this.returnView} buttonText="submit"/>}
             <ul>
@@ -110,18 +110,18 @@ class Dashboard extends Component {
             </ul>
             </div>
 
-            <div class="container">
-            <h2 class="container-title">QUALITY</h2>
+            <div className="container">
+            <h2 className="container-title">QUALITY</h2>
             <button onClick={this.updateView} name="quality">Add Quality Issue</button>
             {this.state.qualityView && <QualityForm onComplete={this.props.qualityAdd} viewChange={this.returnView} buttonText="submit"/>}
-            <ul class="list-container">
+            <ul className="list-container">
               {this.props.quality.map((quality)=> <li key={quality.id}>
               <QualityItem quality={quality} onComplete={this.props.qualityUpdate} onRemove={this.props.qualityDelete} /></li>)}
             </ul>
             </div>
 
-            <div class="container">
-            <h2 class="container-title">DELIVERY</h2>
+            <div className="container">
+            <h2 className="container-title">DELIVERY</h2>
             <button onClick={this.updateView} name="delivery">Add Delivery Issue</button>
             {this.state.deliveryView && <DeliveryForm onComplete={this.props.deliveryAdd} viewChange={this.returnView} buttonText="submit"/>}
             <ul>
@@ -129,8 +129,8 @@ class Dashboard extends Component {
               <DeliveryItem delivery={delivery} onComplete={this.props.deliveryUpdate} onRemove={this.props.deliveryDelete} /></li>)}
             </ul>
             </div>
-            <div class="container">
-            <h2 class="container-title">COST</h2>
+            <div className="container">
+            <h2 className="container-title">COST</h2>
             <button onClick={this.updateView} name="cost">Add cost Issue</button>
             {this.state.costView && <CostForm onComplete={this.props.costAdd} viewChange={this.returnView} buttonText="submit"/>}
             <ul>
@@ -139,8 +139,8 @@ class Dashboard extends Component {
             </ul>
             </div>
 
-            <div class="container">
-            <h2 class="container-title">MORALE</h2>
+            <div className="container">
+            <h2 className="container-title">MORALE</h2>
             <button onClick={this.updateView} name="morale">Add morale Issue</button>
             {this.state.moraleView && <MoraleForm onComplete={this.props.moraleAdd} viewChange={this.returnView} buttonText="submit"/>}
             <ul>
