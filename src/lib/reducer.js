@@ -1,4 +1,3 @@
-
 import uuid from 'uuid/v4';
 import superagent from 'superagent';
 const url =  'https://tier-board.herokuapp.com/api/v1/safety';

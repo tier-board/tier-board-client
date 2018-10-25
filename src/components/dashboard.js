@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
-// import Button from '@material-ui/core/Button';
 
 import SafetyForm from './safety-form';
 import SafetyItem from './safety-item';
@@ -9,20 +8,23 @@ import QualityItem from './quality-item';
 import DeliveryForm from './delivery-form';
 import DeliveryItem from './delivery-item';
 import CostForm from './cost-form';
+import CostItem from './cost-item';
 import MoraleItem from './morale-item';
 import MoraleForm from './morale-form';
-import CostItem from './cost-item';
+import RollupItem from './rollup-item';
+import RollupForm from './rollup-form';
+
 import {safetyAdd, safetyDelete, safetyUpdate, safetyFetch } from '../lib/reducer';
 import {qualityAdd, qualityDelete, qualityUpdate, qualityFetch } from '../lib/quality-reducer';
 import {deliveryAdd, deliveryDelete, deliveryUpdate, deliveryFetch } from '../lib/delivery-reducer';
 import {costAdd, costDelete, costUpdate, costFetch } from '../lib/cost-reducer';
 import {moraleAdd, moraleDelete, moraleUpdate, moraleFetch } from '../lib/morale-reducer';
+import {rollupAdd, rollupDelete, rollupUpdate, rollupFetch } from '../lib/rollup-reducer';
 
 import dateFormat from 'dateformat';
 //import superagent from 'superagent';
 const now = new Date();
 
-const url =  'http://localhost:3003/api/v1/safety';
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -33,6 +35,7 @@ class Dashboard extends Component {
             deliveryView: false,
             costView: false,
             moraleView: false,
+            rollupView: false,
           date: dateFormat(now,'mmm dd, yyyy'),
         }
       }
@@ -42,22 +45,9 @@ class Dashboard extends Component {
     this.props.deliveryFetch();
     this.props.costFetch();
     this.props.moraleFetch();
+    this.props.rollupFetch();
     }
 
-    // allSafetyFetch = () => {
-    //       fetch(url)
-    //         .then(function(res) { 
-    //           return res.json();
-    //         })
-    //         .then((allSafety) => {
-    //           const safetyStuff = allSafety;
-    //           this.setState({safetyData: safetyStuff});
-    //         })
-    // }
-
-// updateView = () => {
-//   this.setState({view: true});
-// }
     updateView = (e) => {
       if(e.target.name === "safety"){
       this.setState({safetyView: true});
@@ -74,10 +64,11 @@ class Dashboard extends Component {
       else if(e.target.name === "morale"){
         this.setState({moraleView: true});
       }
+      else if(e.target.name === "rollup"){
+        this.setState({rollupView: true});
+      }
   }
-    // returnView = () => {
-    //     this.setState({view: false});
-    // }
+
     returnView = () => {
 
       this.setState({safetyView: false});
@@ -85,6 +76,7 @@ class Dashboard extends Component {
       this.setState({deliveryView: false});
       this.setState({costView: false});
       this.setState({moraleView: false});
+      this.setState({rollupView: false});
       }
 
   render() {
@@ -129,6 +121,7 @@ class Dashboard extends Component {
               <DeliveryItem delivery={delivery} onComplete={this.props.deliveryUpdate} onRemove={this.props.deliveryDelete} /></li>)}
             </ul>
             </div>
+
             <div className="container">
             <h2 className="container-title">COST</h2>
             <button onClick={this.updateView} name="cost">Add cost Issue</button>
@@ -148,6 +141,16 @@ class Dashboard extends Component {
               <MoraleItem morale={morale} onComplete={this.props.moraleUpdate} onRemove={this.props.moraleDelete} /></li>)}
             </ul>
             </div>
+
+            <div className="container">
+            <h2 className="container-title">DELIVERY ROLLUP</h2>
+            <button onClick={this.updateView} name="rollup">add delivery score</button>
+            {this.state.rollupView && <RollupForm onComplete={this.props.rollupAdd} viewChange={this.returnView} buttonText="submit"/>}
+            <ul>
+              {this.props.rollup.map((rollup)=> <li key={rollup.id}>
+              <RollupItem rollup={rollup} onComplete={this.props.rollupUpdate} onRemove={this.props.rollupDelete} /></li>)}
+            </ul>
+            </div>
         </Fragment>
     );
   }
@@ -159,6 +162,7 @@ const mapStateToProps = (state) => ({
     delivery: state.delivery,
     cost: state.cost,
     morale: state.morale,
+    rollup: state.rollup,
 
  });
  const mapDispatchToProps = (dispatch) => ({
@@ -186,5 +190,10 @@ const mapStateToProps = (state) => ({
      moraleUpdate: morale => dispatch(moraleUpdate(morale)),
      moraleFetch: morale => dispatch(moraleFetch(morale)),
      moraleDelete: morale => dispatch(moraleDelete(morale)),
+
+     rollupAdd: rollup => dispatch(rollupAdd(rollup)),
+     rollupUpdate: rollup => dispatch(rollupUpdate(rollup)),
+     rollupFetch: rollup => dispatch(rollupFetch(rollup)),
+     rollupDelete: rollup => dispatch(rollupDelete(rollup)),
  });
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
