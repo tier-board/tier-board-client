@@ -1,24 +1,25 @@
 import React, { Component, Fragment } from 'react';
 import dateFormat from 'dateformat';
 const now = new Date();
-export default class safetyForm extends Component {
+export default class RollupForm extends Component {
   constructor(props) {
     super(props);
     this.defaultState = {
-      incidents: '',
-      response: '',
-      safeDay: true,
+      tVarience: '',
+      tCompleted: '',
+      endOfDay: '',
+      areaVarience: '',
       date: dateFormat(now,'mmm dd, yyyy'),
     };
-    const initialState = this.props.safety || this.defaultState;
+    const initialState = this.props.delivery || this.defaultState;
 
     this.state = {...initialState}
   }
-//   setDate = (e) => {
-//       e.preventDefault();
-//       let day = new Date(e);
-//       this.setState({date: day.toLocaleDateString("en-US")});
-//   }
+  // setDate = (e) => {
+  //     e.preventDefault();
+  //     let day = new Date(e);
+  //     this.setState({date: day.toLocaleDateString("en-US")});
+  // }
 
   onSubmit = (e) => {
       e.preventDefault();
@@ -43,18 +44,18 @@ export default class safetyForm extends Component {
       <Fragment>
         <fieldset>
           <form onSubmit={this.onSubmit} onChange={this.onChange}>
-            <label>Safe Day?
-            <input name="safeDay" type="checkbox" value = {this.state.safeDay}/>
+            <label>Total Varience
+            <input name="tVarience" type="text" value={this.state.tVarience}/>
             </label>
-            <label>Incidents
-            <input name="incidents" value = {this.state.incidents}/>
+            <label>Total Completed
+            <input name="tCompleted" type="text" value={this.state.tCompleted}/>
             </label>
-            <label>Response
-            <input name="response" type="text" value = {this.state.response}/>
+            <label>End Of Day
+            <input name="endOfDay" type="text" value={this.state.endOfDay}/>
             </label>
-            {/* <label>Date
-            <input name="date" type="date" value = {this.state.date}/>
-            </label> */}
+            <label>Area Varience
+            <input name="areaVarience" type="text" value = {this.state.areaVarience}/>
+            </label>
             <button>{this.props.buttonText}</button>
           </form>
         </fieldset>
