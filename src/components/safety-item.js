@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import SafetyForm from './safety-form';
-export default class SafetyItem extends Component {
+export default class SafetyItem extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,10 +16,12 @@ export default class SafetyItem extends Component {
   }
   onRemove = () => {
       this.props.onRemove(this.props.safety);
+      this.forceUpdate()
     }
   
  safetyUpdate = (safety) => {
   this.props.onComplete(safety);
+  this.forceUpdate()
   }
 
   render() {

@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import dateFormat from 'dateformat';
 const now = new Date();
-export default class safetyForm extends Component {
+export default class safetyForm extends PureComponent {
   constructor(props) {
     super(props);
     this.defaultState = {

@@ -30,9 +30,8 @@
     transform: rotate(360deg);
   }
 }
-thing {
+test thing {
   font-weight: bold;
   display: inline-flex;
   box-shadow: 2px 5px;
-  
 }

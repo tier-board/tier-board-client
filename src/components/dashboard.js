@@ -48,6 +48,12 @@ class Dashboard extends Component {
     this.props.rollupFetch();
     }
 
+    componentDidUpdate(prevState) {
+      if (this.state !== prevState) {
+       
+    }
+  }
+
     updateView = (e) => {
       if(e.target.name === "safety"){
       this.setState({safetyView: true});
@@ -112,6 +118,16 @@ class Dashboard extends Component {
             </ul>
             </div>
 
+            <div className="container rollup">
+            <h2 className="container-title">DELIVERY ROLLUP</h2>
+            <button onClick={this.updateView} name="rollup">Add Delivery Score</button>
+            {this.state.rollupView && <RollupForm onComplete={this.props.rollupAdd} viewChange={this.returnView} buttonText="submit"/>}
+            <ul>
+              {this.props.rollup.map((rollup)=> <li key={rollup.id}>
+              <RollupItem rollup={rollup} onComplete={this.props.rollupUpdate} onRemove={this.props.rollupDelete} /></li>)}
+            </ul>
+            </div>
+
             <div className="container">
             <h2 className="container-title">DELIVERY</h2>
             <button onClick={this.updateView} name="delivery">Add Delivery Issue</button>
@@ -124,7 +140,7 @@ class Dashboard extends Component {
 
             <div className="container">
             <h2 className="container-title">COST</h2>
-            <button onClick={this.updateView} name="cost">Add cost Issue</button>
+            <button onClick={this.updateView} name="cost">Add Cost Issue</button>
             {this.state.costView && <CostForm onComplete={this.props.costAdd} viewChange={this.returnView} buttonText="submit"/>}
             <ul>
               {this.props.cost.map((cost)=> <li key={cost.id}>
@@ -134,21 +150,11 @@ class Dashboard extends Component {
 
             <div className="container">
             <h2 className="container-title">MORALE</h2>
-            <button onClick={this.updateView} name="morale">Add morale Issue</button>
+            <button onClick={this.updateView} name="morale">Add Morale Item</button>
             {this.state.moraleView && <MoraleForm onComplete={this.props.moraleAdd} viewChange={this.returnView} buttonText="submit"/>}
             <ul>
               {this.props.morale.map((morale)=> <li key={morale.id}>
               <MoraleItem morale={morale} onComplete={this.props.moraleUpdate} onRemove={this.props.moraleDelete} /></li>)}
-            </ul>
-            </div>
-
-            <div className="container">
-            <h2 className="container-title">DELIVERY ROLLUP</h2>
-            <button onClick={this.updateView} name="rollup">add delivery score</button>
-            {this.state.rollupView && <RollupForm onComplete={this.props.rollupAdd} viewChange={this.returnView} buttonText="submit"/>}
-            <ul>
-              {this.props.rollup.map((rollup)=> <li key={rollup.id}>
-              <RollupItem rollup={rollup} onComplete={this.props.rollupUpdate} onRemove={this.props.rollupDelete} /></li>)}
             </ul>
             </div>
         </Fragment>
