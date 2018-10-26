@@ -20,7 +20,6 @@
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "eslint-plugin-jest": "^21.24.1",
-    "gh-pages": "^2.0.1",
     "jest-enzyme": "^6.1.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -41,7 +40,8 @@
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0"
+    "eslint-plugin-standard": "^3.1.0",
+    "gh-pages": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
