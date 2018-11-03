@@ -16,12 +16,13 @@ export default class SafetyItem extends PureComponent {
   }
   onRemove = () => {
       this.props.onRemove(this.props.safety);
-      this.forceUpdate()
+     // window.location.reload();
+     // this.forceUpdate();
     }
   
  safetyUpdate = (safety) => {
   this.props.onComplete(safety);
-  this.forceUpdate()
+
   }
 
   render() {

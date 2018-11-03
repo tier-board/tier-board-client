@@ -16,10 +16,12 @@ export default class QualityItem extends Component {
   }
   onRemove = () => {
       this.props.onRemove(this.props.quality);
+ 
     }
   
  qualityUpdate = (quality) => {
   this.props.onComplete(quality);
+
 
   }
 

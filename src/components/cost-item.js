@@ -9,20 +9,19 @@ export default class CostItem extends Component {
   }
 
   updateView = () => {
-    console.log('cost-item updateView');
     this.setState({view: true});
   }
   returnView = () => {
-    console.log('cost-item returnView');
     this.setState({view: false});
   }
   onRemove = () => {
-    console.log('cost-item onRemove');
       this.props.onRemove(this.props.cost);
+
     }
   
  costUpdate = (cost) => {
   this.props.onComplete(cost);
+
 
   }
 

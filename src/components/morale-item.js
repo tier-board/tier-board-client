@@ -16,10 +16,12 @@ export default class MoraleItem extends Component {
   }
   onRemove = () => {
       this.props.onRemove(this.props.morale);
+
     }
   
  moraleUpdate = (morale) => {
   this.props.onComplete(morale);
+
 
   }
 

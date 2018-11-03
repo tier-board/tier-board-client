@@ -7,7 +7,7 @@ export default class safetyForm extends PureComponent {
     this.defaultState = {
       incidents: '',
       response: '',
-      safeDay: true,
+      safeDay: 'true',
       date: dateFormat(now,'mmm dd, yyyy'),
     };
     const initialState = this.props.safety || this.defaultState;
@@ -44,13 +44,13 @@ export default class safetyForm extends PureComponent {
         <fieldset>
           <form onSubmit={this.onSubmit} onChange={this.onChange}>
             <label>Safe Day?
-            <input name="safeDay" type="checkbox" value = {this.state.safeDay}/>
+            <input name="safeDay" type="checkbox" checked = {this.state.safeDay}/>
             </label>
             <label>Incidents
             <input name="incidents" value = {this.state.incidents}/>
             </label>
             <label>Response
-            <input name="response" type="text" value = {this.state.response}/>
+            <input name="response"  value = {this.state.response}/>
             </label>
             {/* <label>Date
             <input name="date" type="date" value = {this.state.date}/>
