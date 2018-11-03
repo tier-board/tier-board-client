@@ -15,11 +15,13 @@ export default class DeliveryItem extends Component {
     this.setState({view: false});
   }
   onRemove = () => {
-      this.props.onRemove(this.props.delivery);   
+      this.props.onRemove(this.props.delivery);  
+
     }
   
  deliveryUpdate = (delivery) => {
   this.props.onComplete(delivery);
+
   }
 
   render() {

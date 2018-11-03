@@ -22,7 +22,6 @@ import {moraleAdd, moraleDelete, moraleUpdate, moraleFetch } from '../lib/morale
 import {rollupAdd, rollupDelete, rollupUpdate, rollupFetch } from '../lib/rollup-reducer';
 
 import dateFormat from 'dateformat';
-//import superagent from 'superagent';
 const now = new Date();
 
 class Dashboard extends Component {
@@ -48,11 +47,14 @@ class Dashboard extends Component {
     this.props.rollupFetch();
     }
 
-    componentDidUpdate(prevState) {
-      if (this.state !== prevState) {
-       
-    }
-  }
+    // componentDidUpdate() {
+    //   this.props.safetyFetch();
+    //   this.props.qualityFetch();
+    //   this.props.deliveryFetch();
+    //   this.props.costFetch();
+    //   this.props.moraleFetch();
+    //   this.props.rollupFetch(); 
+    // }
 
     updateView = (e) => {
       if(e.target.name === "safety"){
@@ -83,6 +85,7 @@ class Dashboard extends Component {
       this.setState({costView: false});
       this.setState({moraleView: false});
       this.setState({rollupView: false});
+
       }
 
   render() {
@@ -92,7 +95,7 @@ class Dashboard extends Component {
         <Fragment>
           <nav>
             <ul>
-              <li className="nav"><a href="/">home</a></li>
+              <li className="nav"><a href="/tier-board-client/">home</a></li>
               <li className="nav">about</li>
             </ul>
           </nav>

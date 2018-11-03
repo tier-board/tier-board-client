@@ -15,11 +15,13 @@ export default class RollupItem extends Component {
     this.setState({view: false});
   }
   onRemove = () => {
-      this.props.onRemove(this.props.rollup);   
+      this.props.onRemove(this.props.rollup); 
+
     }
   
  rollupUpdate = (rollup) => {
   this.props.onComplete(rollup);
+
   }
 
   render() {

@@ -22,10 +22,14 @@ html, body {
 }
 
 nav {
-    width: 99%;
+    width: 100%;
     background: #0653c7;
     height: 4em;
-    //background-image: url(assets/blue.jpeg);
+    // background-image: url(../assets/blue.jpeg) no-repeat center center fixed;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: 100%;
 }
 
 .nav {
@@ -48,14 +52,14 @@ ul {
 h2, h1 {
     text-align: center;
     //color: #0653c7;
-    width: 95%
+    width: 99%
 }
 .container {
     border: ridge #0653c7;
     border-radius: .5em;
     text-align: center;
     margin: 0 3% 0 3%;
-    margin-bottom: .25%;
+    margin-bottom: .5%;
     background: lightgray;
     //background: #0653c7;
 }
@@ -130,6 +134,11 @@ a {
     }
 }
 
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
 button {
     border-radius: 1em;
     background-color: #0653c7;
@@ -156,6 +165,11 @@ label {
 
 input {
     background: lightgray;
+}
+
+fieldset {
+    height: 7em;
+    z-index: 10;
 }
 
 `;

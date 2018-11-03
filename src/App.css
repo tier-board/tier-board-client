@@ -34,4 +34,5 @@ test thing {
   font-weight: bold;
   display: inline-flex;
   box-shadow: 2px 5px;
+  background-image: url(assets/blue.jpeg);
 }
