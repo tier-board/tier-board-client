@@ -41,6 +41,7 @@ export default class safetyForm extends PureComponent {
   render() {
     return(
       <Fragment>
+        <div class="form-wrapper">
         <fieldset>
           <form onSubmit={this.onSubmit} onChange={this.onChange}>
             <label>Safe Day?
@@ -58,6 +59,7 @@ export default class safetyForm extends PureComponent {
             <button>{this.props.buttonText}</button>
           </form>
         </fieldset>
+        </div>
       </Fragment>
     );
   

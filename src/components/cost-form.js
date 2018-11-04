@@ -40,6 +40,7 @@ export default class CostForm extends Component {
   render() {
     return(
       <Fragment>
+        <div class="form-wrapper">
         <fieldset>
           <form onSubmit={this.onSubmit} onChange={this.onChange}>
             <label>Station
@@ -51,6 +52,7 @@ export default class CostForm extends Component {
             <button>{this.props.buttonText}</button>
           </form>
         </fieldset>
+        </div>
       </Fragment>
     );
   

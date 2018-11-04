@@ -25,11 +25,6 @@ nav {
     width: 100%;
     background: #0653c7;
     height: 4em;
-    // background-image: url(../assets/blue.jpeg) no-repeat center center fixed;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: 100%;
 }
 
 .nav {
@@ -166,10 +161,56 @@ label {
 input {
     background: lightgray;
 }
-
+//FORM
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    //background: green;
+}
 fieldset {
-    height: 7em;
+    height: 30%;
     z-index: 10;
+    background: #232527;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    //width: 50%;
+}
+input {
+    font-size: 120%;
+    color: #5a5854;
+    background-color: #f2f2f2;
+    border: 1px solid #bdbdbd;
+    border-radius: 7px;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-position: 8px 9px;
+    margin: 5px;
+}
+input:focus, input:hover {
+    background-color: #ffffff;
+    border: 1px solid #blele4;
+}
+label {
+    margin: 0 3em 1em 3em;
+    display: block;
+    //text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 `;
