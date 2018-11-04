@@ -19,7 +19,7 @@
 }
 
 .App-link {
-  color: #fb7361;
+  color: #232527;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +35,13 @@ test thing {
   display: inline-flex;
   box-shadow: 2px 5px;
   background-image: url(assets/blue.jpeg);
+  color: #5a5854;
+  background-color: #f2f2f2;
+  border: 1px solid #bdbdbd;
+  border-radius: 1em;
+  background-repeat: no-repeat;
+  background-position: 8px 9px;
+  display: block;
+  margin-bottom: 10px;
+  text-align: start;
 }

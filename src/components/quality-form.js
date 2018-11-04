@@ -43,6 +43,7 @@ export default class QualityForm extends Component {
   render() {
     return(
       <Fragment>
+        <div class="form-wrapper">
         <fieldset>
           <form onSubmit={this.onSubmit} onChange={this.onChange}>
             <label>A issue
@@ -66,6 +67,7 @@ export default class QualityForm extends Component {
             <button>{this.props.buttonText}</button>
           </form>
         </fieldset>
+        </div>
       </Fragment>
     );
   
