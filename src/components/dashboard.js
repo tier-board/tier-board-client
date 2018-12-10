@@ -96,7 +96,7 @@ class Dashboard extends Component {
           <nav>
             <ul>
               <li className="nav"><a href="/tier-board-client/">home</a></li>
-              <li className="nav">about</li>
+              <li className="nav"><a href="/tier-board-client/about">about</a></li>
             </ul>
           </nav>
           <h1>Tier Board Data</h1>
