@@ -19,6 +19,7 @@ html, body {
     padding: 0;
     background: #f5f5f5;
     margin-bottom: 3%;
+    //background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
 }
 
 nav {
@@ -171,14 +172,16 @@ input {
     //background: green;
 }
 fieldset {
+    border-radius: .5em;
     height: 30%;
     z-index: 10;
-    background: #232527;
-    width: 50%;
+    background: #5a5854;;
+    width: 40%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 2px 8px 3px #888888;
 }
 
 form {
@@ -186,7 +189,6 @@ form {
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
-    //width: 50%;
 }
 input {
     font-size: 120%;

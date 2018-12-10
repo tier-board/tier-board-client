@@ -21,7 +21,7 @@ export default (state = initialState, action) => {
   case SAFETY_ASYNC_ADD:
     return [...state, ...payload];
   case SAFETY_UPDATE: 
-    return state.map(safety => safety.id === payload.id ? payload : safety);
+    return [...state && state.map(safety => safety.id === payload.id ? payload : safety)];
   case SAFETY_DELETE: 
     return state.filter(safety => safety.id !== payload.id);
   default: return state;
