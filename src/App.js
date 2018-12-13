@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component} from 'react';
 import {Provider} from 'react-redux';
-import {HashRouter, Route} from 'react-router-dom';
+import {HashRouter, Route, Switch} from 'react-router-dom';
 import createStore from './lib/store.js';
 import Dashboard from './components/dashboard.js';
 import About from './components/about';
@@ -14,10 +14,10 @@ export default class App extends Component {
           <div>
             <Provider store={store}>
               <HashRouter>
-                  <Fragment>
-                    <Route exact path={`/`} component={Dashboard}/>
-                    <Route exact path={`/about`} component={About}/>
-                  </Fragment>
+                  <Switch>
+                    <Route exact path="/" component={Dashboard}/>
+                    <Route exact path="/about" component={About}/>
+                  </Switch>
               </HashRouter>
             </Provider>
           </div>
