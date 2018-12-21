@@ -1,11 +1,11 @@
 {
-  "main.js": "/tier-board-client/static/js/main.c54c9eb2.chunk.js",
-  "main.js.map": "/tier-board-client/static/js/main.c54c9eb2.chunk.js.map",
+  "main.js": "/tier-board-client/static/js/main.06823f7d.chunk.js",
+  "main.js.map": "/tier-board-client/static/js/main.06823f7d.chunk.js.map",
   "static/js/1.97deb954.chunk.js": "/tier-board-client/static/js/1.97deb954.chunk.js",
   "static/js/1.97deb954.chunk.js.map": "/tier-board-client/static/js/1.97deb954.chunk.js.map",
   "runtime~main.js": "/tier-board-client/static/js/runtime~main.a292bd66.js",
   "runtime~main.js.map": "/tier-board-client/static/js/runtime~main.a292bd66.js.map",
   "index.html": "/tier-board-client/index.html",
-  "precache-manifest.aa7a3a169fee79bb5d9b7e0a16e710db.js": "/tier-board-client/precache-manifest.aa7a3a169fee79bb5d9b7e0a16e710db.js",
+  "precache-manifest.e3f1c4c0bf9e11e189cb2d344ed7a2b3.js": "/tier-board-client/precache-manifest.e3f1c4c0bf9e11e189cb2d344ed7a2b3.js",
   "service-worker.js": "/tier-board-client/service-worker.js"
 }
