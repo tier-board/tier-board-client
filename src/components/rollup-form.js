@@ -11,7 +11,7 @@ export default class RollupForm extends Component {
       areaVarience: '',
       date: dateFormat(now,'mmm dd, yyyy'),
     };
-    const initialState = this.props.delivery || this.defaultState;
+    const initialState = this.props.rollup || this.defaultState;
 
     this.state = {...initialState}
   }

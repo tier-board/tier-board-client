@@ -93,12 +93,12 @@ class Dashboard extends Component {
     return (
        
         <Fragment>
-          <nav>
+          {/* <nav>
             <ul>
               <li className="nav"><a href="/tier-board-client/">home</a></li>
               <li className="nav"><a href="https://tier-board.github.io/tier-board-client/#/about">about</a></li>
             </ul>
-          </nav>
+          </nav> */}
           <h1>Tier Board Data</h1>
             <h2>{this.state.date}</h2>
             <div className="container">
