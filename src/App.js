@@ -14,6 +14,7 @@ export default class App extends Component {
           <div>
             <Provider store={store}>
               <HashRouter>
+                <div>
                 <nav>
                   <ul>
                     <li className="nav"><Link to="/">home</Link></li>
@@ -24,6 +25,7 @@ export default class App extends Component {
                     <Route exact path="/" component={Dashboard}/>
                     <Route exact path="/about" component={About}/>
                   </Switch>
+                  </div>
               </HashRouter>
             </Provider>
           </div>
