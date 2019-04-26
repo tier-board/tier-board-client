@@ -100,6 +100,7 @@ class Dashboard extends Component {
             </ul>
           </nav> */}
           <h1>Tier Board Data</h1>
+          <input type='select' defaultValue={this.state.date}></input>
             <h2>{this.state.date}</h2>
             <div className="container">
             <h2 className="container-title">SAFETY</h2>
