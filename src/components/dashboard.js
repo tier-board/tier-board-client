@@ -88,6 +88,13 @@ class Dashboard extends Component {
 
       }
 
+      updateDate = (e) => {
+        let newDate = e.target.value;
+        console.log(newDate);
+        this.setState({date: newDate});
+
+      }
+
   render() {
 
     return (
@@ -100,7 +107,7 @@ class Dashboard extends Component {
             </ul>
           </nav> */}
           <h1>Tier Board Data</h1>
-          <input type='select' defaultValue={this.state.date}></input>
+          <input onChange={this.updateDate} type='date' defaultValue={this.state.date} value={this.state.date}></input>
             <h2>{this.state.date}</h2>
             <div className="container">
             <h2 className="container-title">SAFETY</h2>
