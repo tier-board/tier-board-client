@@ -26,24 +26,18 @@ export default class DeliveryForm extends Component {
       this.props.viewChange();
       this.setState({...this.defaultState});
   };
-  onChange = (e) => {
-    const val =
-    e.target.type === "checkbox"
-      ? e.target.checked
-      : e.target.value;
 
-  const changedBit = {
-    [e.target.name]: val
-  };
-  this.setState(changedBit);
-  }
+    handleChange = (e) => {
+      const { name, value } = e.target;
+      this.setState({ [name]: value })
+    };
 
   render() {
     return(
-      <Fragment>
+
         <div class="form-wrapper">
         <fieldset>
-          <form onSubmit={this.onSubmit} onChange={this.onChange}>
+          <form onSubmit={this.onSubmit} onChange={this.handleChange}>
             {/* <label>A issue
                 <input name="aIssues" type="checkbox" value={this.state.aIssues}/>
             </label>
@@ -66,7 +60,6 @@ export default class DeliveryForm extends Component {
           </form>
         </fieldset>
         </div>
-      </Fragment>
     );
   
 }

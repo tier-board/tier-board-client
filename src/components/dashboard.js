@@ -16,7 +16,7 @@ import RollupForm from './rollup-form';
 
 import {safetyAdd, safetyDelete, safetyUpdate, safetyFetch } from '../redux/safety/safety-reducer';
 import {qualityAdd, qualityDelete, qualityUpdate, qualityFetch } from '../redux/quality/quality-reducer';
-import {deliveryAdd, deliveryDelete, deliveryUpdate, deliveryFetch } from '../redux/delivery/delivery-reducer';
+import {deliveryAdd, deliveryDelete, deliveryUpdate, deliveryFetch } from '../redux/delivery/delivery.actions';
 import {costAdd, costDelete, costUpdate, costFetch } from '../redux/cost/cost.actions';
 import {moraleAdd, moraleDelete, moraleUpdate, moraleFetch } from '../redux/morale/morale-reducer';
 import {rollupAdd, rollupDelete, rollupUpdate, rollupFetch } from '../redux/rollup/rollup-reducer';

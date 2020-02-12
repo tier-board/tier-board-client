@@ -3,8 +3,8 @@ import thunk from 'redux-thunk';
 
 import safetyReducer from './safety/safety-reducer';
 import qualityReducer from './quality/quality-reducer';
-import deliveryReducer from './delivery/delivery-reducer';
-import costReducer from './cost/cost-reducer';
+import deliveryReducer from './delivery/delivery.reducer';
+import costReducer from './cost/cost.reducer';
 import moraleReducer from './morale/morale-reducer';
 import rollupReducer from './rollup/rollup-reducer';
 

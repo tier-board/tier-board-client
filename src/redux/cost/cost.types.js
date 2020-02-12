@@ -1,9 +1,9 @@
 const costActionTypes = {
-  COST_ADD: 'cost/ADD',
-  COST_ASYNC_ADD: 'cost/ASYNC_ADD',
-  COST_FETCH: 'cost/FETCH',
-  COST_UPDATE: 'cost/UPDATE',
-  COST_DELETE: 'cost/DELETE',
+  COST_ADD: 'COST_ADD',
+  COST_ASYNC_ADD: 'COST_ASYNC_ADD',
+  COST_FETCH: 'COST_FETCH',
+  COST_UPDATE: 'COST_UPDATE',
+  COST_DELETE: 'COST_DELETE',
 };
 
 export default costActionTypes;
