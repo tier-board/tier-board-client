@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import dateFormat from 'dateformat';
+import FormInput from '../form-input/form-input.component';
 const now = new Date();
 export default class CostForm extends Component {
   constructor(props) {
@@ -13,11 +14,11 @@ export default class CostForm extends Component {
 
     this.state = {...initialState}
   }
-  setDate = (e) => {
-      e.preventDefault();
-      let day = new Date(e);
-      this.setState({date: day.toLocaleDateString("en-US")});
-  }
+  // setDate = (e) => {
+  //     e.preventDefault();
+  //     let day = new Date(e);
+  //     this.setState({date: day.toLocaleDateString("en-US")});
+  // }
 
   onSubmit = (e) => {
       e.preventDefault();
@@ -25,35 +26,34 @@ export default class CostForm extends Component {
       this.props.viewChange();
       this.setState({...this.defaultState});
   };
-  onChange = (e) => {
-    const val =
-    e.target.type === "checkbox"
-      ? e.target.checked
-      : e.target.value;
-
-  const changedBit = {
-    [e.target.name]: val
+  handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value })
   };
-  this.setState(changedBit);
-  }
 
   render() {
     return(
-      <Fragment>
         <div class="form-wrapper">
         <fieldset>
-          <form onSubmit={this.onSubmit} onChange={this.onChange}>
-            <label>Station
-            <input name="station" type="text" value={this.state.station}/>
-            </label>
-            <label>Task
-            <input name="task" type="text" value={this.state.task}/>
-            </label>
+          <form onSubmit={this.onSubmit}>
+            <FormInput 
+              name='station'
+              label='Station' 
+              onChange={this.handleChange}
+              value={this.state.station}
+            />
+
+            <FormInput 
+              name='task'
+              label='Task' 
+              onChange={this.handleChange}
+              value={this.state.task}
+            />
+
             <button>{this.props.buttonText}</button>
           </form>
         </fieldset>
         </div>
-      </Fragment>
     );
   
 }

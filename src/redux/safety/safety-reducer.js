@@ -1,6 +1,7 @@
 import uuid from 'uuid/v4';
 import superagent from 'superagent';
-const url =  'https://tier-board.herokuapp.com/api/v1/safety';
+//const url =  'https://tier-board.herokuapp.com/api/v1/safety';
+const url =  'https://localhost:3003/api/v1/safety';
 // Actions
 export const SAFETY_ADD = 'safety/ADD';
 export const SAFETY_ASYNC_ADD = 'safety/ASYNC_ADD';
@@ -30,7 +31,6 @@ export default (state = initialState, action) => {
 
 // Action Creators
 export const safetyAdd = (safety) => {
-  console.log('addReducer', safety);
   safety.id = uuid();
   return dispatch => {
     superagent.post(url, safety)
@@ -40,13 +40,11 @@ export const safetyAdd = (safety) => {
   };
 };
 
-export const safetyAsyncAdd = (safety) => {
-  console.log('inside action creator', safety);
-  return {
-    type: SAFETY_ASYNC_ADD,
-    payload: safety,
-  };
-};
+export const safetyAsyncAdd = (safety) => ({
+  type: SAFETY_ASYNC_ADD,
+  payload: safety,
+});
+
 export const safetyFetch = () => {
   return dispatch => {
     fetch(url)

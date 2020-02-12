@@ -7,19 +7,19 @@ import QualityForm from './quality-form';
 import QualityItem from './quality-item';
 import DeliveryForm from './delivery-form';
 import DeliveryItem from './delivery-item';
-import CostForm from './cost-form';
-import CostItem from './cost-item';
+import CostForm from './cost/cost-form';
+import CostItem from './cost/cost-item';
 import MoraleItem from './morale-item';
 import MoraleForm from './morale-form';
 import RollupItem from './rollup-item';
 import RollupForm from './rollup-form';
 
-import {safetyAdd, safetyDelete, safetyUpdate, safetyFetch } from '../lib/reducer';
-import {qualityAdd, qualityDelete, qualityUpdate, qualityFetch } from '../lib/quality-reducer';
-import {deliveryAdd, deliveryDelete, deliveryUpdate, deliveryFetch } from '../lib/delivery-reducer';
-import {costAdd, costDelete, costUpdate, costFetch } from '../lib/cost-reducer';
-import {moraleAdd, moraleDelete, moraleUpdate, moraleFetch } from '../lib/morale-reducer';
-import {rollupAdd, rollupDelete, rollupUpdate, rollupFetch } from '../lib/rollup-reducer';
+import {safetyAdd, safetyDelete, safetyUpdate, safetyFetch } from '../redux/safety/safety-reducer';
+import {qualityAdd, qualityDelete, qualityUpdate, qualityFetch } from '../redux/quality/quality-reducer';
+import {deliveryAdd, deliveryDelete, deliveryUpdate, deliveryFetch } from '../redux/delivery/delivery-reducer';
+import {costAdd, costDelete, costUpdate, costFetch } from '../redux/cost/cost.actions';
+import {moraleAdd, moraleDelete, moraleUpdate, moraleFetch } from '../redux/morale/morale-reducer';
+import {rollupAdd, rollupDelete, rollupUpdate, rollupFetch } from '../redux/rollup/rollup-reducer';
 
 import dateFormat from 'dateformat';
 const now = new Date();
@@ -35,7 +35,7 @@ class Dashboard extends Component {
             costView: false,
             moraleView: false,
             rollupView: false,
-          date: dateFormat(now,'mmm dd, yyyy'),
+          date: Date,
         }
       }
      componentDidMount() {
@@ -46,15 +46,6 @@ class Dashboard extends Component {
     this.props.moraleFetch();
     this.props.rollupFetch();
     }
-
-    // componentDidUpdate() {
-    //   this.props.safetyFetch();
-    //   this.props.qualityFetch();
-    //   this.props.deliveryFetch();
-    //   this.props.costFetch();
-    //   this.props.moraleFetch();
-    //   this.props.rollupFetch(); 
-    // }
 
     updateView = (e) => {
       if(e.target.name === "safety"){
@@ -100,12 +91,6 @@ class Dashboard extends Component {
     return (
        
         <Fragment>
-          {/* <nav>
-            <ul>
-              <li className="nav"><a href="/tier-board-client/">home</a></li>
-              <li className="nav"><a href="https://tier-board.github.io/tier-board-client/#/about">about</a></li>
-            </ul>
-          </nav> */}
           <h1>Tier Board Data</h1>
           <input onChange={this.updateDate} type='date' defaultValue={this.state.date} value={this.state.date}></input>
             <h2>{this.state.date}</h2>

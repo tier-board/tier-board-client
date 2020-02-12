@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import {Provider} from 'react-redux';
 import {HashRouter, Route, Switch, Link} from 'react-router-dom';
-import createStore from './lib/store.js';
+import createStore from './redux/store.js';
 import Dashboard from './components/dashboard.js';
 import About from './components/about.js';
 

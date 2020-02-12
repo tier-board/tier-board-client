@@ -26,28 +26,39 @@ export default class CostItem extends Component {
   }
 
   render() {
+    let {cost: {station, task}} = this.props;
       return(
         <Fragment>
          <div onDoubleClick={this.updateView}>
-            <li className="list-wrapper">
+            <div className="list-wrapper">
               <div className="row">
                 <div className="column">
                   <div className="column1">
                     <h3>STATION</h3>
-                    <p>{this.props.cost.station}</p>
+                    <p>{station}</p>
                   </div>
                 </div>
                 <div className="column">
                   <div className="column2">
                     <h3>TASK</h3>
-                    <p>{this.props.cost.task}</p>
+                    <p>{task}</p>
                   </div>
                 </div>
               </div>
-            </li>
+            </div>
             {this.state.view && <button onClick={this.onRemove}>Delete</button>}
          </div> 
-         {this.state.view && <div><CostForm onComplete={this.costUpdate} cost={this.props.cost} viewChange={this.returnView} onClick={this.props.returnView} buttonText = 'save update'/><button onClick={this.returnView}>cancel update</button></div>}
+         {this.state.view && 
+           <div>
+             <CostForm 
+               onComplete={this.costUpdate} 
+               cost={this.props.cost} 
+               viewChange={this.returnView} 
+               onClick={this.props.returnView} 
+               buttonText = 'save update'
+             />
+             <button onClick={this.returnView}>cancel update</button>
+          </div>}
         </Fragment>
       );
   }

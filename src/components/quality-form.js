@@ -16,11 +16,11 @@ export default class QualityForm extends Component {
 
     this.state = {...initialState}
   }
-  setDate = (e) => {
-      e.preventDefault();
-      let day = new Date(e);
-      this.setState({date: day.toLocaleDateString("en-US")});
-  }
+  // setDate = (e) => {
+  //     e.preventDefault();
+  //     let day = new Date(e);
+  //     this.setState({date: day.toLocaleDateString("en-US")});
+  // }
 
   onSubmit = (e) => {
       e.preventDefault();
