@@ -1,0 +1,11 @@
+const deliveryActionTypes = {
+
+  DELIVERY_ADD : 'DELIVERY_ADD',
+  DELIVERY_ASYNC_ADD: 'DELIVERY_ASYNC_ADD',
+  DELIVERY_FETCH: 'DELIVERY_FETCH',
+  DELIVERY_UPDATE: 'DELIVERY_UPDATE',
+  DELIVERY_DELETE: 'DELIVERY_DELETE', 
+     
+};
+
+export default deliveryActionTypes;
