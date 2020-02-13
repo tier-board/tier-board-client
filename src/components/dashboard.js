@@ -14,12 +14,12 @@ import MoraleForm from './morale-form';
 import RollupItem from './rollup-item';
 import RollupForm from './rollup-form';
 
-import {safetyAdd, safetyDelete, safetyUpdate, safetyFetch } from '../redux/safety/safety-reducer';
-import {qualityAdd, qualityDelete, qualityUpdate, qualityFetch } from '../redux/quality/quality-reducer';
+import {safetyAdd, safetyDelete, safetyUpdate, safetyFetch } from '../redux/safety/safety.actions';
+import {qualityAdd, qualityDelete, qualityUpdate, qualityFetch } from '../redux/quality/quality.actions';
 import {deliveryAdd, deliveryDelete, deliveryUpdate, deliveryFetch } from '../redux/delivery/delivery.actions';
 import {costAdd, costDelete, costUpdate, costFetch } from '../redux/cost/cost.actions';
-import {moraleAdd, moraleDelete, moraleUpdate, moraleFetch } from '../redux/morale/morale-reducer';
-import {rollupAdd, rollupDelete, rollupUpdate, rollupFetch } from '../redux/rollup/rollup-reducer';
+import {moraleAdd, moraleDelete, moraleUpdate, moraleFetch } from '../redux/morale/morale.actions';
+import {rollupAdd, rollupDelete, rollupUpdate, rollupFetch } from '../redux/rollup/rollup.actions';
 
 import dateFormat from 'dateformat';
 const now = new Date();
