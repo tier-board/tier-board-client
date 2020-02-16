@@ -1,8 +1,7 @@
 import React from 'react';
 import dateFormat from 'dateformat';
-import FormInput from '../form-input/form-input.component';
 const now = new Date();
-export default class CostForm extends React.Component {
+export default class MoraleForm extends React.Component {
   constructor(props) {
     super(props);
     this.defaultState = {
@@ -10,7 +9,7 @@ export default class CostForm extends React.Component {
       task: '',
       date: dateFormat(now,'mmm dd, yyyy'),
     };
-    const initialState = this.props.cost || this.defaultState;
+    const initialState = this.props.morale || this.defaultState;
 
     this.state = {...initialState};
   }
@@ -33,26 +32,20 @@ export default class CostForm extends React.Component {
 
   render() {
     return(
-      <div class="form-wrapper">
-        <fieldset>
-          <form onSubmit={this.onSubmit}>
-            <FormInput 
-              name='station'
-              label='Station' 
-              onChange={this.handleChange}
-              value={this.state.station}
-            />
-
-            <FormInput 
-              name='task'
-              label='Task' 
-              onChange={this.handleChange}
-              value={this.state.task}
-            />
-
-            <button>{this.props.buttonText}</button>
-          </form>
-        </fieldset>
+      <div>
+        <div class="form-wrapper">
+          <fieldset>
+            <form onSubmit={this.onSubmit} onChange={this.handleChange}>
+              <label>Station
+                <input name="station" type="text" value={this.state.station}/>
+              </label>
+              <label>Task
+                <input name="task" type="text" value={this.state.task}/>
+              </label>
+              <button>{this.props.buttonText}</button>
+            </form>
+          </fieldset>
+        </div>
       </div>
     );
   

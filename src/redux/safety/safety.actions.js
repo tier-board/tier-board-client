@@ -1,8 +1,8 @@
 import uuid from 'uuid/v4';
 import superagent from 'superagent';
+import safetyActionTypes from './safety.types';
 //const url =  'https://tier-board.herokuapp.com/api/v1/safety';
 const url =  'https://localhost:3003/api/v1/safety';
-import safetyActionTypes from './safety.types';
 
 export const safetyAdd = (safety) => {
   safety.id = uuid();
